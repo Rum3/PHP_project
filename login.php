@@ -2,26 +2,26 @@
 <html>
 <head>
     <title>login</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
     <nav>
         <ul>
-            <li><a href="registration.php">Регистрация</a></li>
-            <li><a href="login.php">Логин</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="registration.php">Registration</a></li>
         </ul>
     </nav>
 </header>
-    <h2>Вход</h2>
+    <h2>Login</h2>
     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <label for="username">Потребителско име:</label>
+        <label for="username">Name:</label>
         <input type="text" id="username" name="username" required><br><br>
 
-        <label for="password">Парола:</label>
+        <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br><br>
 
-        <input type="submit" value="Вход">
+        <input type="submit" value="Login">
     </form>
 </body>
 </html>
@@ -43,14 +43,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Защита от SQL инжекции (примерно с използване на prepared statements)
-    $stmt = $conn->prepare("SELECT username, password FROM users WHERE username = ?");
+    $stmt = $conn->prepare("SELECT id, username, email, password FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
-    $stmt->bind_result($db_username, $db_password_hash);
+    $stmt->bind_result($user_id, $db_username, $db_email, $db_password_hash);
     $stmt->fetch();
 
     if (password_verify($password, $db_password_hash)) {
-        echo "Добре дошли, $db_username!";
+        // Стартиране на сесия и задаване на данни в сесията
+        session_start();
+        $_SESSION['user_id'] = $user_id;
+        $_SESSION['username'] = $db_username;
+        $_SESSION['email'] = $db_email;
+
+        // Пренасочване към dashboard.php
+        header("Location: ads.php");
+        exit;
     } else {
         echo "Грешно потребителско име или парола. Моля, опитайте отново.";
     }
@@ -59,5 +67,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conn->close();
 }
+
 ?>
 

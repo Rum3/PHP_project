@@ -1,0 +1,263 @@
+body {
+    font-family: Arial, sans-serif;
+    background: rgb(255, 255, 220);
+}
+/* header */
+header {
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Разделя навигационните списъци от лявата и дясната страна на хедъра */
+}
+
+.nav-left, .nav-right,ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-left li,
+.nav-right li 
+,ul li{
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-left li:last-child,
+.nav-right li:last-child {
+    margin-right: 0; /* Премахва маргина след последния елемент на всеки списък */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #666;
+}
+
+nav ul li a:hover {
+    color: #666666ce;
+    font-size: 110%;
+}
+
+/* Силове за формите */
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #555;;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    color: #555;;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgb(210, 210, 210);
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #3333336e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgb(210, 210, 210);
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Home page */
+.content {
+    max-width: 60%;
+    margin: 0 auto; 
+    padding: 20px;
+    border: 2px solid rgb(121, 121, 84);
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 30px;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* адс */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.ads-header {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.ad-container {
+    flex-basis: calc(50% - 40px);
+    padding: 10px;
+    margin: 10px; 
+    background: rgb(160, 160, 129);
+}
+
+.ad-title {
+    font-size: 20px;
+    color: #333;
+}
+
+.ad-description {
+    font-size: 16px;
+    color: #666;
+}
+
+.ad-image {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.edit-link {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.edit-link:hover {
+    background-color: #555;
+}
+
+/* Success and error div */
+.success {
+    background-color: #4CAF50;
+    width: 300px;
+    color: white; 
+    padding: 10px; 
+    border-radius: 5px; 
+    text-align: center;
+    margin-top: 10px; 
+}
+
+.error {
+    background-color: #f44336;
+    width: 300px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Edit */
+.containerEdit {
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+label {
+    font-size: 18px;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    height: 80px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="file"] {
+    margin-top: 10px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+img {
+    max-width: 100%;
+    margin-top: 10px;
+}h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+

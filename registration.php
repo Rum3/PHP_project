@@ -2,13 +2,13 @@
 <html>
 <head>
     <title>registration</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
     <nav>
         <ul>
-            <li><a href="registration.php">Registration</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="login.php">Login</a></li>
         </ul>
     </nav>
@@ -45,9 +45,9 @@
             $query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 
             if (mysqli_query($conn, $query)) {
-                echo "Регистрацията е успешна!";
+                echo '<div class="success">' . "Registration success: " .'</div>';
             } else {
-                echo "Грешка при регистрацията: " . mysqli_error($conn);
+                echo '<div class="error">' . "Registration errorа: " . mysqli_error($conn) . '</div>';
             }
         }
 
