@@ -12,11 +12,11 @@
         <ul class="nav-left">
             <li>User: <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'GUEST'; ?></li>    
             <?php if (isset($_SESSION['username'])) : ?>
-                <li><a href="add.php">Add ads</a></li>
+                <li><a href="add.php">Add product</a></li>
             <?php endif; ?>
-            <li><a href="ads.php">Ads</a></li>
+            <li><a href="ads.php">Shop</a></li>
             <?php if (isset($_SESSION['username'])) : ?>
-                <li><a href="myAds.php">My ads</a></li>
+                <li><a href="myAds.php">My products</a></li>
             <?php endif; ?>
         </ul>
         <ul class="nav-right">

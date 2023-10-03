@@ -21,25 +21,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ad_id = $_POST['ad_id'];
     $title = $_POST['title'];
     $content = $_POST['content'];
+    $price = $_POST['price'];
 
-    // Актуализирайте данните в базата данни
-    $sql = "UPDATE ads SET title = ?, content = ? WHERE id = ? AND user_id = ?";
+    $sql = "UPDATE products SET title = ?, content = ? WHERE id = ? AND user_id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssii", $title, $content, $ad_id, $_SESSION['user_id']);
+    $stmt->bind_param("ssidii", $title, $content, $price, $ad_id, $_SESSION['user_id']);
 
     if ($stmt->execute()) {
-        // Актуализацията е успешна
-        header("Location: myAds.php"); // Пренасочете към страницата с моите обяви
+        header("Location: myAds.php");
         exit();
     } else {
-        // Грешка при актуализация
-        echo "Грешка при актуализация на обявата: " . $stmt->error;
+        echo "error" . $stmt->error;
     }
 
     $stmt->close();
     $conn->close();
 } else {
-    // Невалидна заявка
-    echo "Невалидна заявка за актуализация.";
+    echo "error";
 }
 ?>

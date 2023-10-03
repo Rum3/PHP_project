@@ -12,7 +12,7 @@
         <ul>
             <li><a href="login.php">Login</a></li>
             <li><a href="registration.php">Registration</a></li>
-            <li><a href="ads.php">Ads</a></li>
+            <li><a href="ads.php">Shop</a></li>
         </ul>
     </nav>
 </header><br>

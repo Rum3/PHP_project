@@ -9,7 +9,7 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between; /* Разделя навигационните списъци от лявата и дясната страна на хедъра */
+    justify-content: space-between;
 }
 
 .nav-left, .nav-right,ul {
@@ -27,7 +27,7 @@ nav {
 
 .nav-left li:last-child,
 .nav-right li:last-child {
-    margin-right: 0; /* Премахва маргина след последния елемент на всеки списък */
+    margin-right: 0;
 }
 
 nav ul li a {
@@ -40,7 +40,7 @@ nav ul li a:hover {
     font-size: 110%;
 }
 
-/* Силове за формите */
+/* Forms */
 h2 {
     text-align: center;
     font-size: 24px;
@@ -61,7 +61,8 @@ label {
 
 input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+.price {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -125,7 +126,7 @@ p {
     line-height: 1.5;
 }
 
-/* адс */
+/* Products */
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -174,6 +175,17 @@ p {
     font-size: 14px;
 }
 
+.add-to-cart-link {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: green;
+    color: #fff;
+    text-decoration: none;
+    margin: 10px 0 0 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
 .edit-link:hover {
     background-color: #555;
 }
@@ -181,7 +193,6 @@ p {
 /* Success and error div */
 .success {
     background-color: #4CAF50;
-    width: 300px;
     color: white; 
     padding: 10px; 
     border-radius: 5px; 
@@ -191,7 +202,6 @@ p {
 
 .error {
     background-color: #f44336;
-    width: 300px;
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -260,4 +270,28 @@ img {
     color: #333;
     margin-bottom: 20px;
 }
+
+/* view cart */
+.cart-container {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+}
+
+.cart-link {
+    font-size: 18px;
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 20px;
+}
+
+.cart-message {
+    font-size: 16px;
+    color: #333;
+}
+
+
+
 

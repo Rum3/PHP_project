@@ -30,7 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Свържете се към базата данни
     $db_host = "localhost";
     $db_username = "root";
     $db_password = "";
@@ -42,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Защита от SQL инжекции (примерно с използване на prepared statements)
     $stmt = $conn->prepare("SELECT id, username, email, password FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -50,20 +48,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->fetch();
 
     if (password_verify($password, $db_password_hash)) {
-        // Стартиране на сесия и задаване на данни в сесията
         session_start();
         $_SESSION['user_id'] = $user_id;
         $_SESSION['username'] = $db_username;
         $_SESSION['email'] = $db_email;
 
-        // Пренасочване към dashboard.php
         header("Location: ads.php");
         exit;
     } else {
-        echo "Грешно потребителско име или парола. Моля, опитайте отново.";
+        echo "error";
     }
 
-    // Затваряме връзката към базата данни
     $stmt->close();
     $conn->close();
 }

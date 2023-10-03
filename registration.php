@@ -25,7 +25,7 @@
         <input type="password" name="password" required><br><br>
 
         <input type="submit" value="Submit">
-    </form>
+    </form><br><br>
 </body>
 </html>
 <?php
